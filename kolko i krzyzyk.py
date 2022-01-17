@@ -1,20 +1,13 @@
-'''
-Lista aplikacji 
-'''
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-from os import startfile
 #Początek aplikacji
 root = Tk()
 root.title('Kółko i Krzyżyk')
-
 #Stałe
 iks = True
 licznik = 0
 #Funkcje
-
-
 def koniec_gry():
     b1.config(state=DISABLED)
     b2.config(state=DISABLED)
@@ -85,7 +78,6 @@ def wygrana():
         wygrany = True
         messagebox.showinfo('Kółko i krzyżyk', 'Gracz X wygrywa!')
         koniec_gry()
-
     elif b1['text'] == 'O' and b2['text'] == 'O' and b3['text'] == 'O':
         b1.config(bg='green')
         b2.config(bg='green')
@@ -148,7 +140,6 @@ def wygrana():
 
 def b_click(b):
     global iks, licznik
-
     if b['text'] == '' and iks is True:
         b['text'] = 'X'
         iks = False
@@ -161,7 +152,6 @@ def b_click(b):
         wygrana()
     else:
         messagebox.showerror('Kółko i Krzyżyk', 'Pole zajęte!\nWybierz inne')
-
 
 def restart():
     global b1, b2, b3, b4, b5, b6, b7, b8, b9
